@@ -5,10 +5,10 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class IptablesService {
-  URL_API_INPUT = 'http://localhost:5000/api/input'
+  URL_API_INPUT = 'http://localhost:5000/api/allIp'
 
   constructor(private http: HttpClient) { }
-  getInput(){
+  getAllIptables(){
     return this.http.get(this.URL_API_INPUT);
   }
 

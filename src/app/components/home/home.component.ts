@@ -10,7 +10,10 @@ export class HomeComponent implements OnInit {
   constructor(private ipTablesService: IptablesService) { }
 
   ngOnInit(): void {
-    console.log(this.ipTablesService.getInput());
+  this.ipTablesService.getAllIptables().subscribe(
+    res=> console.log(res),
+    err => console.error(err)
+  )
   }
 
 }
