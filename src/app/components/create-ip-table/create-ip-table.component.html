@@ -1,2 +1,25 @@
 <app-header></app-header>
-<p>BOTONES PARA CREAR Y ELIMINAR IPTABLES!</p>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-2">
+
+      <button type="button" class="btn btn-primary" id="botones" (click)="Input()">CREACION INPUT</button>
+
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-secondary" id="botones" (click)="Forward()">CREACION FORWARD</button>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-success" id="botones" (click)="Output()">CREACION OUTPUT</button>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-danger" id="botones" (click)="deleteIpTables()">ELIMINAR IPTABLES</button>
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { IptablesService } from 'src/app/services/iptables.service';
 
 @Component({
   selector: 'app-create-ip-table',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateIpTableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ipTablesService: IptablesService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+    deleteIpTables(){
+      this.ipTablesService.deleteIpTables(IptablesService).subscribe(
+        res=> console.log(res),
+        err => console.error(err)
+      )
+      
+    }
+
+    Input(){
+      this.ipTablesService.createInput(IptablesService).subscribe(
+        res=> console.log(res),
+        err => console.error(err)
+      )
+      
+    }
+    Output(){
+      this.ipTablesService.createOutput(IptablesService).subscribe(
+        res=> console.log(res),
+        err => console.error(err)
+      )
+      
+    }
+    Forward(){
+      this.ipTablesService.createForward(IptablesService).subscribe(
+        res=> console.log(res),
+        err => console.error(err)
+      )
+      
+    }
 }

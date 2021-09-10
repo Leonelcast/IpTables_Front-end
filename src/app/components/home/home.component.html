@@ -1,2 +1,29 @@
 <app-header></app-header>
 <p>TABLA MAMALONA DE IPTABLES!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let regla of ipTablesService.rules ">
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+</div>

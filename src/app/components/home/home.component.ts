@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IptablesService} from '../../services/iptables.service'
+import {Regla} from '../../models/regla'
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,13 +9,18 @@ import {IptablesService} from '../../services/iptables.service'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private ipTablesService: IptablesService) { }
+  constructor(public ipTablesService: IptablesService) { }
 
   ngOnInit(): void {
-  this.ipTablesService.getAllIptables().subscribe(
-    res=> console.log(res),
-    err => console.error(err)
-  )
+    this.getTables()
+  }
+  getTables(){
+    this.ipTablesService.getAllIptables().subscribe(
+      res=> {
+        this.ipTablesService.rules = res;
+      },
+      err => console.error(err)
+    )
   }
 
 }
