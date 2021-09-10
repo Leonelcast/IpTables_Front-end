@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   getTables(){
     this.ipTablesService.getAllIptables().subscribe(
       res=> {
+        console.log(res)
         this.ipTablesService.rules = res;
       },
       err => console.error(err)

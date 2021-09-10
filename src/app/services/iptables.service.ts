@@ -15,6 +15,7 @@ export class IptablesService {
   iptables:IpTable[] | undefined
   rules: Regla[] = []; 
   constructor(private http: HttpClient) { }
+  
   getAllIptables(){
     return this.http.get<Regla[]>(this.URL_API_ALL);
   }
